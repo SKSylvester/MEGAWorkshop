@@ -17,7 +17,16 @@ public class MyVector3
         this.z = z;
     }
 
+  
+
     public MyVector3(UnityEngine.Vector3 UnityVector3) //Converts Unity Vector into my own MyVector3.
+    {
+        this.x = UnityVector3.x;
+        this.y = UnityVector3.y;
+        this.z = UnityVector3.z;
+    }
+
+    public MyVector3(UnityEngine.Quaternion UnityVector3)
     {
         this.x = UnityVector3.x;
         this.y = UnityVector3.y;
