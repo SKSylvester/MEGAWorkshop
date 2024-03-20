@@ -173,15 +173,21 @@ public class MyVector3
         return rv.x + rv.y + rv.z;
     }
 
+    public static MyVector3 RadiansToVector(float RadiansAngles)
+    {
+        MyVector3 rv = new MyVector3 (Mathf.Cos(RadiansAngles), Mathf.Sin(RadiansAngles), Mathf.Cos(RadiansAngles));
 
+
+        return rv;
+    }
     public static MyVector3 EulerAnglesToDirection(MyVector3 EulerAngles)
     {
-        MyVector3 rv = new MyVector3(Mathf.Cos(EulerAngles.y) * Mathf.Cos(EulerAngles.x), Mathf.Sin(EulerAngles.x), Mathf.Cos(EulerAngles.x) * Mathf.Sin(EulerAngles.y));
+        MyVector3 rv = new MyVector3(0,0,0);
 
 
-        rv.x = Mathf.Cos(EulerAngles.y) * Mathf.Cos(EulerAngles.x);
-        rv.y = Mathf.Sin(EulerAngles.x);
-        rv.z = Mathf.Cos(EulerAngles.x) * Mathf.Sin(EulerAngles.y);
+        rv.z = Mathf.Cos(EulerAngles.y) * Mathf.Cos(-EulerAngles.x);
+        rv.y = Mathf.Sin(-EulerAngles.x);
+        rv.x = Mathf.Cos(-EulerAngles.x) * Mathf.Sin(EulerAngles.y);
         //Values stored in EulerAngles must be in Radians
         return rv;
     }
