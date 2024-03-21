@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Matrix object.unity
+- path: Assets/Scenes/Matrix 4x4 Object - Workshop 4/Matrix object.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

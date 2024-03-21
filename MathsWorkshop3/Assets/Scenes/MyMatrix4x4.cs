@@ -65,6 +65,20 @@ public class MyMatrix4x4
         values[3, 3] = 0;
     }
 
+
+    public static MyMatrix4x4 Identity
+    {
+        get
+        {
+            return new MyMatrix4x4(
+        new Vector4(1, 0, 0, 0),
+        new Vector4(0, 1, 0, 0),
+        new Vector4(0, 0, 1, 0),
+        new Vector4(0, 0, 0, 1));
+        }
+    }
+
+
     public static Vector4 operator *(MyMatrix4x4 lhs, Vector4 rhs) //Matrix multiplication 
     {
         Vector4 rv = new Vector4();
@@ -77,5 +91,30 @@ public class MyMatrix4x4
         return rv;
     }
 
+    public static MyMatrix4x4 operator *(MyMatrix4x4 lhs, MyMatrix4x4 rhs)
+    {
+        MyMatrix4x4 rv = Identity;
 
+        rv.values[0, 0] = lhs.values[0, 0] * rhs.values[0,0] + lhs.values[0, 1] * rhs.values[1, 0] + lhs.values[0, 2] * rhs.values[2, 0] + lhs.values[0, 3] * rhs.values[3, 0];
+        rv.values[1, 0] = lhs.values[1, 0] * rhs.values[0, 0] + lhs.values[1, 1] * rhs.values[1, 0] + lhs.values[1, 2] * rhs.values[2, 0] + lhs.values[1, 3] * rhs.values[3, 0];
+        rv.values[2, 0]= lhs.values[2, 0] * rhs.values[0,0] + lhs.values[2, 1] * rhs.values[1, 0] + lhs.values[2, 2] * rhs.values[2, 0] + lhs.values[2, 3] * rhs.values[3, 0];
+        rv.values[3, 0] = lhs.values[3, 0] * rhs.values[0, 0] + lhs.values[3, 1] * rhs.values[1, 0] + lhs.values[3, 2] * rhs.values[2, 0] + lhs.values[3, 3] * rhs.values[3, 0];
+        rv.values[4, 0] = lhs.values[4, 0] * rhs.values[0, 0] + lhs.values[4, 1] * rhs.values[1, 0] + lhs.values[4, 2] * rhs.values[2, 0] + lhs.values[4, 3] * rhs.values[3, 0];
+        rv.values[5, 0] = lhs.values[5, 0] * rhs.values[0, 0] + lhs.values[5, 1] * rhs.values[1, 0] + lhs.values[5, 2] * rhs.values[2, 0] + lhs.values[5, 3] * rhs.values[3, 0];
+        rv.values[6, 0] = lhs.values[6, 0] * rhs.values[0, 0] + lhs.values[6, 1] * rhs.values[1, 0] + lhs.values[6, 2] * rhs.values[2, 0] + lhs.values[6, 3] * rhs.values[3, 0];
+        rv.values[7, 0] = lhs.values[7, 0] * rhs.values[0, 0] + lhs.values[7, 1] * rhs.values[1, 0] + lhs.values[7, 2] * rhs.values[2, 0] + lhs.values[7, 3] * rhs.values[3, 0];
+        rv.values[8, 0] = lhs.values[8, 0] * rhs.values[0, 0] + lhs.values[8, 1] * rhs.values[1, 0] + lhs.values[8, 2] * rhs.values[2, 0] + lhs.values[8, 3] * rhs.values[3, 0];
+        rv.values[9, 0] = lhs.values[9, 0] * rhs.values[0, 0] + lhs.values[9, 1] * rhs.values[1, 0] + lhs.values[9, 2] * rhs.values[2, 0] + lhs.values[9, 3] * rhs.values[3, 0];
+        rv.values[10, 0] = lhs.values[10, 0] * rhs.values[0, 0] + lhs.values[10, 1] * rhs.values[1, 0] + lhs.values[10, 2] * rhs.values[2, 0] + lhs.values[10, 3] * rhs.values[3, 0];
+        rv.values[11, 0] = lhs.values[11, 0] * rhs.values[0, 0] + lhs.values[11, 1] * rhs.values[1, 0] + lhs.values[11, 2] * rhs.values[2, 0] + lhs.values[11, 3] * rhs.values[3, 0];
+        rv.values[12, 0] = lhs.values[12, 0] * rhs.values[0, 0] + lhs.values[12, 1] * rhs.values[1, 0] + lhs.values[12, 2] * rhs.values[2, 0] + lhs.values[12, 3] * rhs.values[3, 0];
+        rv.values[13, 0] = lhs.values[13, 0] * rhs.values[0, 0] + lhs.values[13, 1] * rhs.values[1, 0] + lhs.values[13, 2] * rhs.values[2, 0] + lhs.values[13, 3] * rhs.values[3, 0];
+        rv.values[14, 0] = lhs.values[14, 0] * rhs.values[0, 0] + lhs.values[14, 1] * rhs.values[1, 0] + lhs.values[14, 2] * rhs.values[2, 0] + lhs.values[14, 3] * rhs.values[3, 0];
+        rv.values[15, 0] = lhs.values[15, 0] * rhs.values[0, 0] + lhs.values[15, 1] * rhs.values[1, 0] + lhs.values[15, 2] * rhs.values[2, 0] + lhs.values[15, 3] * rhs.values[3, 0];
+
+        return rv;
+
+    }
+
+        
 }
