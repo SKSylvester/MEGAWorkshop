@@ -17,7 +17,49 @@ public class MyVector3
         this.z = z;
     }
 
-  
+    // Properties or getters for x, y, and z
+
+    // Define method for left direction
+    public static MyVector3 Left()
+    {
+        return new MyVector3(-1, 0, 0);
+    }
+
+    // Define method for right direction
+    public static MyVector3 Right()
+    {
+        return new MyVector3(1, 0, 0);
+    }
+
+    // Define method for top direction
+    public static MyVector3 Top()
+    {
+        return new MyVector3(0, 1, 0);
+    }
+
+    // Define method for front direction
+    public static MyVector3 Front()
+    {
+        return new MyVector3(0, 0, 1);
+    }
+
+    // Define method for back direction
+    public static MyVector3 Back()
+    {
+        return new MyVector3(0, 0, -1);
+    }
+
+    // Define method for up direction
+    public static MyVector3 Up()
+    {
+        return new MyVector3(0, 1, 0);
+    }
+
+    // Define method for down direction
+    public static MyVector3 Down()
+    {
+        return new MyVector3(0, -1, 0);
+    }
 
     public MyVector3(UnityEngine.Vector3 UnityVector3) //Converts Unity Vector into my own MyVector3.
     {
