@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MyVector3
@@ -263,5 +264,15 @@ public class MyVector3
 
         return C; //C = The interpolated Value
     }
+    public static MyVector3 RotateVertexAroundAxis(float Angle, MyVector3 Axis, MyVector3 Vertex)
+    {
+        //THe rodrigues rotation formula
+        //Angle has to be in radians
+        
+        MyVector3 rv = (Vertex * Mathf.Cos(Angle)) +
+            //(DotProduct(Vertex, Axis) * Axis * (1 - Mathf.Cos(Angle)))  +
+            CrossProduct(Axis, Vertex) * Mathf.Sin(Angle);
 
+        return rv;
+    }
 }

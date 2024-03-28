@@ -116,9 +116,22 @@ public class MyMatrix4x4
         return rv;
     }
 
+    //swaps the elements across the diagonal
     public MyMatrix4x4 RotationInverse()
     {
-        return new MyMatrix4x4(GetRow(0), (GetRow(1). (GetRow(2), (GetRow(3));
+        MyMatrix4x4 rv = Identity;
+
+        rv.values[0, 0] = values[0, 0];
+        rv.values[1, 0] = values[0, 1];
+        rv.values[2, 0] = values[0, 2];
+        rv.values[0, 1] = values[1, 0];
+        rv.values[1, 1] = values[1, 1];
+        rv.values[2, 1] = values[1, 2];
+        rv.values[0, 2] = values[2, 0];
+        rv.values[1, 2] = values[2, 1];
+        rv.values[2, 2] = values[2, 2];
+
+        return rv;
     }
 
 
